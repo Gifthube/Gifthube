@@ -1,3 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Design Studio</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div id="app">
+      <header class="app-header">Design Studio</header>
+      <div class="app-main">
+        <aside class="panel left" id="leftPanel">
+          <section class="section">
+            <h3>Add Element</h3>
+            <div class="row">
+              <label for="elementType">Type</label>
+              <select id="elementType" aria-label="Element type">
+                <option value="div">div</option>
+                <option value="section">section</option>
+                <option value="p">p</option>
+                <option value="h1">h1</option>
+                <option value="h2">h2</option>
+                <option value="span">span</option>
+                <option value="button">button</option>
+                <option value="a">a (link)</option>
+                <option value="img">img</option>
+                <option value="input">input</option>
+                <option value="textarea">textarea</option>
+                <option value="header">header</option>
+                <option value="footer">footer</option>
+                <option value="nav">nav</option>
+              </select>
+            </div>
+            <div class="row">
+              <button id="addElementBtn" class="primary">Add to Canvas</button>
+            </div>
+          </section>
+          <section class="section">
+            <h3>Layers</h3>
+            <ul id="layersList" class="layers" aria-label="Layers list"></ul>
+          </section>
+        </aside>
+
+        <section class="canvas-panel" id="centerPanel">
+          <div id="designCanvas" tabindex="0" aria-label="Design canvas"></div>
+        </section>
+
+        <aside class="panel right" id="rightPanel">
+          <section class="section">
+            <h3>Properties</h3>
+            <form id="propertiesForm" autocomplete="off">
+              <div class="row">
+                <label for="propTag">Element</label>
+                <select id="propTag"></select>
+              </div>
+              <div class="group">
+                <h4>Common</h4>
+                <div id="commonProps" class="form-grid"></div>
+              </div>
+              <div class="group">
+                <h4>Specific</h4>
+                <div id="specificProps" class="form-grid"></div>
+              </div>
+              <div class="group">
+                <h4>Style</h4>
+                <div id="styleProps" class="form-grid"></div>
+              </div>
+            </form>
+            <div id="validationBox" class="validation" aria-live="polite">
+              <ul id="validationList"></ul>
+            </div>
+          </section>
+          <section class="section">
+            <h3>Output</h3>
+            <div class="code-actions">
+              <button id="copyCodeBtn">Copy</button>
+              <button id="downloadCodeBtn">Download</button>
+              <button id="openPreviewBtn">Open</button>
+            </div>
+            <textarea id="codeOutput" spellcheck="false" aria-label="Generated HTML code"></textarea>
+            <div class="preview">
+              <iframe id="livePreview" title="Live Preview"></iframe>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </div>
+    <script defer src="./app.js"></script>
+  </body>
+  </html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
